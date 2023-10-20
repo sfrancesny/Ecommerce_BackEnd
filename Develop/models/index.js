@@ -1,35 +1,35 @@
 // import models
-const Product = require('./Product');
-const Category = require('./Category');
-const Tag = require('./Tag');
-const ProductTag = require('./ProductTag');
+import Product, { belongsTo, belongsToMany } from './Product';
+import Category, { hasMany } from './Category';
+import Tag, { belongsToMany as _belongsToMany } from './Tag';
+import ProductTag from './ProductTag';
 
 // Product belongs to Category
-Product.belongsTo(Category, {
+belongsTo(Category, {
   foreignKey: 'category_id',
   onDelete: 'CASCADE' //  ensures that a product is deleted if its related category is deleted
 });
 
 // Category has many Product models
-Category.hasMany(Product, {
+hasMany(Product, {
   foreignKey: 'category_id'
 });
 
 // Product belongs to many Tag models through the intermediary ProductTag
-Product.belongsToMany(Tag, {
+belongsToMany(Tag, {
   through: ProductTag,
   as: 'tags', // Alias for when data is retrieved
   foreignKey: 'product_id'
 });
 
 // Tag belongs to many Product models
-Tag.belongsToMany(Product, {
+_belongsToMany(Product, {
   through: ProductTag,
   as: 'products', // Alias for when data is retrieved
   foreignKey: 'tag_id'
 });
 
-module.exports = {
+export default {
   Product,
   Category,
   Tag,

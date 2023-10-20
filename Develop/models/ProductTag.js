@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
+import { Model, DataTypes } from 'sequelize';
 
-const sequelize = require('../config/connection').default;
+import sequelize from '../config/connection';
 
 class ProductTag extends Model {}
 
@@ -37,4 +37,4 @@ ProductTag.init(
 );
 
 
-module.exports = ProductTag;
+export default ProductTag;
