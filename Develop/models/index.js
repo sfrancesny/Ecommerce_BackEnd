@@ -28,9 +28,4 @@ Tag.belongsToMany(Product, {
   foreignKey: 'tag_id'
 });
 
-export default {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
-};
+export { Product, Category, Tag, ProductTag };
