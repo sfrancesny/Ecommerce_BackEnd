@@ -1,9 +1,9 @@
-import seedCategories from '.category-seeds';
-import seedProducts from '.product-seeds';
-import seedTags from '.tag-seeds';
-import seedProductTags from '.product-tag-seeds';
+import seedCategories from '.category-seeds.js';
+import seedProducts from '.product-seeds.js';
+import seedTags from '.tag-seeds.js';
+import seedProductTags from '.product-tag-seeds.js';
 
-import sequelize from '../config/connection';
+import sequelize from '../config/connection.js';
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
