@@ -1,7 +1,7 @@
-import seedCategories from './category-seeds';
-import seedProducts from './product-seeds';
-import seedTags from './tag-seeds';
-import seedProductTags from './product-tag-seeds';
+import seedCategories from '.category-seeds';
+import seedProducts from '.product-seeds';
+import seedTags from '.tag-seeds';
+import seedProductTags from '.product-tag-seeds';
 
 import sequelize from '../config/connection';
 

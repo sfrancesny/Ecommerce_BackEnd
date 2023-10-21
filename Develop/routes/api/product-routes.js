@@ -1,5 +1,7 @@
-const router = require('express').Router();
-import { Product, Category, Tag, ProductTag } from '../../models';
+import express from 'express';
+import { Product, Category, Tag, ProductTag } from '../../models/index.js'; 
+
+const router = express.Router();
 
 // The `/api/products` endpoint
 

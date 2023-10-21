@@ -1,29 +1,28 @@
-// import models
-import Product, { belongsTo, belongsToMany } from './Product';
-import Category, { hasMany } from './Category';
-import Tag, { belongsToMany as _belongsToMany } from './Tag';
-import ProductTag from './ProductTag';
+import Product from './Product.js';
+import Category from './Category.js';
+import Tag from './Tag.js';
+import ProductTag from './ProductTag.js';
 
 // Product belongs to Category
-belongsTo(Category, {
+Product.belongsTo(Category, {
   foreignKey: 'category_id',
-  onDelete: 'CASCADE' //  ensures that a product is deleted if its related category is deleted
+  onDelete: 'CASCADE' // ensures that a product is deleted if its related category is deleted
 });
 
 // Category has many Product models
-hasMany(Product, {
+Category.hasMany(Product, {
   foreignKey: 'category_id'
 });
 
 // Product belongs to many Tag models through the intermediary ProductTag
-belongsToMany(Tag, {
+Product.belongsToMany(Tag, {
   through: ProductTag,
   as: 'tags', // Alias for when data is retrieved
   foreignKey: 'product_id'
 });
 
 // Tag belongs to many Product models
-_belongsToMany(Product, {
+Tag.belongsToMany(Product, {
   through: ProductTag,
   as: 'products', // Alias for when data is retrieved
   foreignKey: 'tag_id'

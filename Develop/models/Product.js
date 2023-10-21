@@ -1,7 +1,7 @@
 // import important parts of sequelize library
 import { Model, DataTypes } from 'sequelize';
 // import our database connection from config.js
-import sequelize from '../config/connection';
+import sequelize from '../config/connection.js';
 
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Product extends Model {}
