@@ -20,7 +20,7 @@ Product.belongsToMany(Tag, {
   through: {
     model: ProductTag,
     unique: false,
-    onDelete: 'CASCADE' // Add this line
+    onDelete: 'CASCADE'
   },
   as: 'tags', // Alias for when data is retrieved
   foreignKey: 'product_id'
@@ -31,7 +31,7 @@ Tag.belongsToMany(Product, {
   through: {
     model: ProductTag,
     unique: false,
-    onDelete: 'CASCADE' // Add this line
+    onDelete: 'CASCADE'
   },
   as: 'products', // Alias for when data is retrieved
   foreignKey: 'tag_id'
