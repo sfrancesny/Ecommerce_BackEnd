@@ -30,10 +30,11 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## Usage
 Ensure you have Node.js, MySQL, and Insomnia Core installed on your machine.
+Make sure to create a .env file to utilize environment variables to store sensitive data, like your MySQL username, password, and database name.
 First create the schema from the MySQL shell 'source schema.sql;'.
 Seed the database from the terminal 'npm run seed'.
 Start the application ---> start the server 'npm start'.
-Test your API routes in Insomnia Core
+Test your API routes in Insomnia Core.
 
 ## Resources
 Xpert Learning Assistant
