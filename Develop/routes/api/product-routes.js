@@ -113,6 +113,14 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   console.log(`Accessing the DELETE /api/products/${req.params.id} route...`);
   try {
+    // this deletes all associated product_tags for the product
+    await ProductTag.destroy({
+      where: {
+        product_id: req.params.id
+      }
+    });
+
+    // then it deletes the product
     const product = await Product.destroy({ where: { id: req.params.id } });
     if (!product) {
       return res.status(404).json({ message: 'Product not found' });
@@ -125,3 +133,4 @@ router.delete('/:id', async (req, res) => {
 });
 
 export default router;
+

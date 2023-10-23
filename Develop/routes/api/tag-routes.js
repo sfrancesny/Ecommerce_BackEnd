@@ -67,6 +67,14 @@ router.put('/:id', async (req, res) => {
 // delete one tag by its `id` value
 router.delete('/:id', async (req, res) => {
   try {
+    // First, delete all product_tag associations for this tag
+    await ProductTag.destroy({
+      where: {
+        tag_id: req.params.id
+      }
+    });
+
+    // Now, delete the tag itself
     const tag = await Tag.destroy({
       where: {
         id: req.params.id
