@@ -1,4 +1,4 @@
-# Module 13 - Object-Relational Mapping (ORM) Challenge: E-commerce Back End
+# Object-Relational Mapping (ORM) Challenge: E-commerce Back End
 
 ## Description
 In the swiftly changing landscape of e-commerce, maintaining a competitive stance is crucial. To address this need, this project delivers a resilient backend infrastructure for an e-commerce website using Express.js, a fast, unopinionated web framework, and Sequelize, a promise-based Node.js ORM. With these technologies at the helm, this system ensures streamlined and efficient interactions with a MySQL database. This backend system not only provides a solid foundation for your internet retail company but also boasts capabilities for seamless creation, update, and deletion of data via API POST, PUT, and DELETE routes that has been tested through Insomnia Core.
